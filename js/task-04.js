@@ -7,12 +7,12 @@ const btnDec = document.querySelector('button[data-action="decrement"]');
 
 const incrementClick = () => {
   Value += 1;
-  return (counterValue.textContent = Value);
+  counterValue.textContent = Value;
 };
 
 const decrementClick = () => {
   Value -= 1;
-  return (counterValue.textContent = Value);
+  counterValue.textContent = Value;
 };
 
 btnInc.addEventListener("click", incrementClick);

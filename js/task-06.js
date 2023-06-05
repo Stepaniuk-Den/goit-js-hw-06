@@ -1,7 +1,11 @@
 const textInput = document.querySelector("#validation-input");
 const textLength = document.querySelector("[data-length]");
-textInput.addEventListener("focus", (e) => {
-  e.target.value.length > 6
-    ? textInput.classList.add("valid")
-    : textInput.classList.replace("valid", "invalid");
+textInput.addEventListener("blur", (e) => {
+  if (e.target.value.length === Number(textLength.dataset.length)) {
+    textInput.classList.add("valid");
+    textInput.classList.remove("invalid");
+  } else {
+    textInput.classList.add("invalid");
+    textInput.classList.remove("valid");
+  }
 });
